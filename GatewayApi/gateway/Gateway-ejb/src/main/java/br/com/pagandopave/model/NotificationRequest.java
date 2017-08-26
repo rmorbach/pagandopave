@@ -1,6 +1,6 @@
-package br.com.pagandopave.notification;
+package br.com.pagandopave.model;
 
-public class NotificationModel {
+public class NotificationRequest {
 
 	private String titulo;
 	private String descricao;
@@ -11,6 +11,7 @@ public class NotificationModel {
 	private String pessoas;
 	private String fotoPath;
 	private String id_parceiro;
+	
 	public String getTitulo() {
 		return titulo;
 	}

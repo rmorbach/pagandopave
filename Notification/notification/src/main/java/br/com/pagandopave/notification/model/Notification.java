@@ -4,6 +4,7 @@ public class Notification
 {
 	private String title;
 	private String body;
+	private String icon;
 	public String getTitle() {
 		return title;
 	}
@@ -15,6 +16,12 @@ public class Notification
 	}
 	public void setBody(String body) {
 		this.body = body;
+	}
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 	
 }
