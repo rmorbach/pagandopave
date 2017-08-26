@@ -10,6 +10,6 @@ public interface UsuarioManager {
 	public void cadastrar(Usuario usuario);
 	public Usuario alterar(Usuario usuario);
 	public void deletar(Usuario usuario);
-	public Usuario consultarPorNickName(String nickName);
+	public Usuario consultarPorDeviceId(String deviceId);
 
 }
