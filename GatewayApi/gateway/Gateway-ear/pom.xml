@@ -53,7 +53,7 @@
 				<artifactId>maven-ear-plugin</artifactId>
 				<version>2.6</version>
 				<configuration>
-					<displayName>dialogmodel</displayName>
+					<displayName>gateway</displayName>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<modules>
 						<ejbModule>
@@ -66,6 +66,7 @@
 							<contextRoot>/gateway</contextRoot>
 						</webModule>
 					</modules>
+					<outputDirectory>D:\Projetos\HackatonAgillitas\wildfly-10.1.0.Final\standalone\deployments</outputDirectory>
 				</configuration>
 			</plugin>
 		</plugins>
