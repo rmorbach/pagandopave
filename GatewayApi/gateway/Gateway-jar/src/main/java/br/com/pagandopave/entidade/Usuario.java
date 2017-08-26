@@ -15,6 +15,7 @@ public class Usuario implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -5006761905080299793L;
+	
 	@Id
 	@GeneratedValue
 	private Long id;

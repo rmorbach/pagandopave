@@ -31,9 +31,9 @@ public interface UsuarioDAO{
 	void deletar(Usuario usuario);
 	
 	/**
-	 * Consultar por telefone.
+	 * Consultar por nickName.
 	 *
-	 * @param telefone the telefone
+	 * @param telefone the nickName
 	 * @return the usuario
 	 */
 	Usuario consultarPorDeviceId(String nickName);
