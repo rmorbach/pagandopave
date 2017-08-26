@@ -55,6 +55,8 @@
 				var data_inicio = $("#data_inicio").val()
 				var data_fim = $("#data_fim").val()
 				var pessoas = $("#numero_pessoas").val()
+				var valorOriginal = $("#valor_original").val()
+				var valorFinal = $("#valor_final").val()
 
 				formData.append("titulo", titulo)
 				formData.append("descricao", descricao)
@@ -64,15 +66,21 @@
 				formData.append("data_fim", data_fim)
 				formData.append("pessoas", pessoas)
 				formData.append("arquivo", arquivo)
+				formData.append("valor_original", valorOriginal)
+				formData.append("valor_final", valorFinal)				
 
 
 
 				var xhr = new XMLHttpRequest()
 
+
+				$("#mensagem").show();
+				$("#mensagem").html("Aguarde, criando campanha ...");
+
 				xhr.onreadystatechange = function () {
 					if (xhr.readyState == 4) {
-						$("#mensagem").show();
-						$("#mensagem").html("Campanha criada com sucesso");
+						
+						$("#mensagem").html("Campanha criada com sucesso!");
 						location.href = "/campanhas"
 					}
 				}
@@ -171,6 +179,20 @@
 								<input type="time" class="form-control" id="hora_fim" name="hora_fim">
 							</div>
 						</div>
+
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="valor_original">Valor original:</label>
+								<input type="text" class="form-control" id="valor_original" placeholder="R$" name="valor_original">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="valor_final">Valor com desconto:</label>
+								<input type="text" class="form-control" placeholder="R$" id="valor_final" name="valor_final">
+							</div>
+						</div>
+
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label for="numero_pessoas">Número de pessoas:</label>

@@ -53,7 +53,9 @@
 			    			<div class="noticia_wrapper">
 				    			<span class="noticia_autor"><%=campanhas[i].titulo%></span>
 				    			<a href="campanha?id_campanha=<%= campanhas[i].id %>" class="noticia_titulo"><%=campanhas[i].titulo%></a>
-				    			<span class="noticia_data"><%=campanhas[i].descricao%></span>
+								<span class="noticia_data"><%=campanhas[i].descricao%></span>
+								<h5>Valor original: R$<%=campanhas[i].valor_original%></h5>
+								<h5>Valor com desconto: R$<%=campanhas[i].valor_final%></h5>
 				    			<br />
 				    			<p class="noticia_resumo">
 				    				Número de pessoas: <%=campanhas[i].pessoas%>
