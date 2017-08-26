@@ -1,4 +1,4 @@
-package hackathon.com.pagandopave;
+package hackathon.com.pagandopave.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import hackathon.com.pagandopave.R;
 import hackathon.com.pagandopave.model.Promotion;
 
 public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.PromotionViewHolder> {

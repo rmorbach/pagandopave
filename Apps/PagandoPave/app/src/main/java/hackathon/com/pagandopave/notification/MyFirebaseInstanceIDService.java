@@ -36,18 +36,18 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
                 String token = strings[0];
 
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MyFirebaseInstanceIDService.this);
-                String appId = preferences.getString("appId", null);
+                String deviceId = preferences.getString("deviceId", null);
 
-                if(appId == null) {
-                    appId = UUID.randomUUID().toString();
+                if(deviceId == null) {
+                    deviceId = UUID.randomUUID().toString();
                     SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("appId", appId);
+                    editor.putString("deviceId", deviceId);
                     editor.apply();
                 }
 
                 JSONObject jsonObject = new JSONObject();
                 try {
-                    jsonObject.put("appId", appId);
+                    jsonObject.put("deviceId", deviceId);
                     jsonObject.put("token", token);
 
                     String response = NetworkUtils.doPost(NetworkUtils.getRegisterTokenURL(), jsonObject.toString());
