@@ -27,12 +27,8 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
 	@Override
 	public Usuario alterar(Usuario usuario) {
-		Usuario user = em.find(Usuario.class, usuario.getId());
-		user.setNickname(usuario.getNickname());
-		user.setSenha(usuario.getSenha());
-		user.setIdCartao(usuario.getIdCartao());
 		em.merge(usuario);
-		return null;
+		return usuario;
 	}
 
 	@Override
