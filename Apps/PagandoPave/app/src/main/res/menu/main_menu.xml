@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/promotions"
+        android:title="#tarolando"
+        android:icon="@drawable/ic_fire"
+        />
+
+    <item
+        android:id="@+id/extract"
+        android:title="#paitrocinio"
+        android:icon="@drawable/ic_money_bag"
+        />
+
+    <item
+        android:id="@+id/prizes"
+        android:title="Conquistas"
+        android:icon="@drawable/ic_medal"
+        />
+
+    <item
+        android:id="@+id/account"
+        android:title="Eu"
+        android:icon="@drawable/ic_teenager"
+        />
+
+</menu>

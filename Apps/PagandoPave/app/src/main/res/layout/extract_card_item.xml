@@ -1,0 +1,65 @@
+<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    tools:ignore="MissingPrefix"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp"
+    android:layout_marginTop="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/card_item_extract_category_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/cutlery"
+                android:padding="4dp"
+                />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/card_item_extract_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textStyle="bold"
+                    fontPath="fonts/Roboto-Thin.ttf"
+                    android:text="Teste titulo"
+                    tools:text="Testeeee"/>
+                <TextView
+                    android:id="@+id/card_item_extract_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Teste descrição"
+                    fontPath="fonts/Roboto-Thin.ttf"
+                    tools:text="Testeeee"/>
+                <TextView
+                    android:id="@+id/card_item_extract_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Teste descrição"
+                    fontPath="fonts/Roboto-Thin.ttf"
+                    tools:text="Testeeee"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/card_item_extract_date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="26 AGO"
+                fontPath="fonts/Roboto-Thin.ttf"
+                tools:text="Testeeee"/>
+        </LinearLayout>
+
+</android.support.v7.widget.CardView>
