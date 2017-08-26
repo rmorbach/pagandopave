@@ -6,13 +6,9 @@
     android:layout_gravity="center"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    card_view:cardCornerRadius="4dp"
-    card_view:cardElevation="4dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginRight="4dp"
-    android:layout_marginLeft="4dp"
-    android:layout_marginBottom="4dp"
-    android:padding="1dp">
+    card_view:cardElevation="1dp"
+    android:layout_marginTop="1dp"
+    android:padding="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,28 +28,34 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
+                android:paddingRight="4dp"
+                android:paddingLeft="4dp"
                 android:orientation="vertical">
                 <TextView
                     android:id="@+id/card_item_extract_value"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textStyle="bold"
-                    fontPath="fonts/Roboto-Thin.ttf"
-                    android:text="Teste titulo"
-                    tools:text="Testeeee"/>
+                    fontPath="fonts/Roboto-Bold.ttf"
+                    android:textSize="18sp"
+                    android:text="R$50,00"
+                    android:textColor="#F2994A"
+                    tools:text="R$50,00"/>
                 <TextView
                     android:id="@+id/card_item_extract_category"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Teste descrição"
-                    fontPath="fonts/Roboto-Thin.ttf"
+                    android:text="#comida"
+                    fontPath="fonts/Roboto-Regular.ttf"
+                    android:textSize="16sp"
                     tools:text="Testeeee"/>
                 <TextView
                     android:id="@+id/card_item_extract_place"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Teste descrição"
+                    android:text="Madero Stakehouse"
                     fontPath="fonts/Roboto-Thin.ttf"
+                    android:textSize="18sp"
                     tools:text="Testeeee"/>
             </LinearLayout>
 
@@ -62,6 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="26 AGO"
+                android:textSize="16sp"
                 fontPath="fonts/Roboto-Thin.ttf"
                 tools:text="Testeeee"/>
         </LinearLayout>

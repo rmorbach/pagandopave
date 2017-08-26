@@ -26,7 +26,7 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.Prom
 
     @Override
     public void onBindViewHolder(PromotionViewHolder holder, int position) {
-        //holder.promotionTitle.setText();
+        //holder.prizeTitle.setText();
     }
 
     @Override

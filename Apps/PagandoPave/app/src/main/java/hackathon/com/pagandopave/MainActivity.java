@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import hackathon.com.pagandopave.fragments.ExtractFragment;
+import hackathon.com.pagandopave.fragments.PrizesFragment;
 import hackathon.com.pagandopave.fragments.PromotionFragment;
 import hackathon.com.pagandopave.interfaces.OnFragmentInteractionListener;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -77,7 +78,15 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
                                 break;
                             }
                             case R.id.action_prizes: {
+                                android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                PrizesFragment prizesFragment = new PrizesFragment();
+                                fragmentTransaction.replace(R.id.fragment_container, prizesFragment);
+                                fragmentTransaction.commit();
 
+                                if(mActionBarTitle != null) {
+                                    mActionBarTitle.setText("Conquistas");
+                                }
                             }
 
                         }
