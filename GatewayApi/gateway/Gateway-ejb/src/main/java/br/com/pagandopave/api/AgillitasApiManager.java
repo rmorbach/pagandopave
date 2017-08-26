@@ -11,7 +11,7 @@ public interface AgillitasApiManager {
 	
 	public boolean ativarCartao(String input);
 	
-	public String inserirCredito(String input);
+	public boolean inserirCredito(String input);
 	
 	public String consultarPortador(String input);
 	

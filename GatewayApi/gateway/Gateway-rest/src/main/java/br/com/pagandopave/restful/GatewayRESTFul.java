@@ -14,6 +14,8 @@ import javax.ws.rs.core.Response;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.pagandopave.api.AgillitasApiManager;
+import br.com.pagandopave.api.CampanhaManager;
+import br.com.pagandopave.api.MainManager;
 import br.com.pagandopave.api.PushNotificationManager;
 
 @Named
@@ -25,6 +27,12 @@ public class GatewayRESTFul {
 	
 	@EJB
 	PushNotificationManager notificationManager;
+	
+	@EJB
+	CampanhaManager campanhaManager;
+	
+	@EJB
+	MainManager mainManager;
 	
 	@POST
 	@Path("/saldo")
@@ -98,6 +106,28 @@ public class GatewayRESTFul {
 		System.out.println("[inserirCredito]");
 		
 		ObjectMapper mapper = new ObjectMapper();
-		return Response.status(200).entity(agillitasManager.inserirCredito(input)).build();		
+		return Response.status(200).entity(mainManager.inserirCredito(input)).build();		
+	}
+	
+	@GET
+	@Path("/buscarCampanhas")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response buscarCampanhas() throws IOException {
+		
+		System.out.println("[buscarCampanhas]");
+		
+		ObjectMapper mapper = new ObjectMapper();
+		return Response.status(200).entity(campanhaManager.buscarCampanhas()).build();		
+	}
+	
+	@POST
+	@Path("/pedirDinheiro")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response pedirDinheiro(String input) throws IOException {
+		
+		System.out.println("[pedirDinheiro]");
+		
+		ObjectMapper mapper = new ObjectMapper();
+		return Response.status(200).entity(campanhaManager.buscarCampanhas()).build();		
 	}
 }

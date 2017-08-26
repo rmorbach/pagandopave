@@ -26,7 +26,7 @@ public class NotificationService {
 			firebaseURL = new URL(FIREBASE_URL);
 			Gson g = new Gson();		
 			String parameters = g.toJson(message);
-			HttpResponse resp = HttpHelper.sendPost(firebaseURL, parameters, "application/json", "application/json", READ_TIMEOUT, KEY);
+			HttpResponse resp = HttpHelper.sendPost(firebaseURL, parameters, "application/json", "application/json", READ_TIMEOUT, Parameters.API_KEY);
 			if(resp != null && resp.getStatus() == 200)
 			{
 				result = true;

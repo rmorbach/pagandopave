@@ -151,7 +151,7 @@ public class AgillitasApiManagerBean implements AgillitasApiManager {
 	}
 
 	@Override
-	public String inserirCredito(String input) {
+	public boolean inserirCredito(String input) {
 
 		Gson gson = new Gson();
 
@@ -167,12 +167,14 @@ public class AgillitasApiManagerBean implements AgillitasApiManager {
 
 			apiInstance.atualizarSaldo(Constants.CLIENT_ID, Constants.ACCESS_TOKEN, req.getIdCartao(), setSaldo);
 
+			return true;
+			
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return null;
+		return false;
 	}
 
 	@Override

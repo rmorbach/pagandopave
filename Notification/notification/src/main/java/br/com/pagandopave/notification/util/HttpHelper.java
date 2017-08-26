@@ -56,12 +56,17 @@ public static HttpResponse sendPost(URL url, String urlParameters, String accept
 		HttpResponse httpResponse = new HttpResponse();
 		httpResponse.setStatus(responseCode);
 		
+		System.out.println("[sendPost] ResponseCode: " + responseCode);
+		
+		
 		// If response code is not 200 (success), return null
 		if(responseCode != 200){
 			return httpResponse;
 		}
 
-		System.out.println("[sendPost] ResponseCode: " + responseCode);
+		
+		
+		
 
 		BufferedReader in = new BufferedReader(
 				new InputStreamReader(connection.getInputStream(), Charset.forName("UTF-8")));

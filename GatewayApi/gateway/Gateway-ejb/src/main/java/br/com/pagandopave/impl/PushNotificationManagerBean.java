@@ -15,6 +15,15 @@ import br.com.pagandopave.notification.restclient.NotificationService;
 @Stateless
 public class PushNotificationManagerBean implements PushNotificationManager {
 
+	private static String MESSAGE_PARENT = 
+			"Olá! O cartão do %s está ficando sem crédito. Não quer fazer uma recarga?";
+	
+	private static String MESSAGE_PROMOTION = 
+			"Nova promoção no ar! %s. Traga %s amigos e ganhe um desconto!";
+	
+	private static String MESSAGE_TEEN = 
+			"Olá, %s! Seu cartão foi recarregado! Agora seu saldo é de %s. Use com responsabilidade, hein!";
+	
 	@Override
 	public boolean notifyParent(String input) {
 			
@@ -23,8 +32,8 @@ public class PushNotificationManagerBean implements PushNotificationManager {
 		
 		Notification notification = new Notification();
 		
-		notification.setBody("Body");
-		notification.setTitle("Title");
+		Data data = new Data();
+		data.setFilho(filho);
 		
 		boolean result = NotificationService.sendNotificationToDevice(notificationMessage);
 		
@@ -36,18 +45,22 @@ public class PushNotificationManagerBean implements PushNotificationManager {
 
 		Gson gson = new Gson();
 		
-		NotificationRequest request = gson.fromJson(input, NotificationRequest.class);
 			
+		
+		
 		NotificationMessage notificationMessage = new NotificationMessage();
-		notificationMessage.setTo("token");
+		notificationMessage.setTo("fobvU3KbiDo:APA91bGlRN87CqSXLHdS8Z7t8oS38hH0onVr0u-jStPiCmqcA7nlX009zR1GgceylUSlJ3QW2J8DrKW0egq2W8JR3mCTZ0ZD5McQLbLUcfJ_ZSUjnfhlqNSdwOBAob12iCwklFldwTPB");
 		
 		Notification notification = new Notification();
 		Data data = new Data();
 		
-		data.setParam("id");
+		data.setTitle("Promocao!!");
+		data.setBody("Confira a promocao da semana. Pague seis leve meia duzia.");
 		
-		notification.setBody("");
-		notification.setTitle(request.getTitulo());
+		notificationMessage.setData(data);
+		
+		//notification.setBody("");
+		//notification.setTitle(request.getTitulo());
 		
 		boolean result = NotificationService.sendNotificationToDevice(notificationMessage);
 		

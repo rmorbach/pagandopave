@@ -5,6 +5,9 @@ public class Notification
 	private String title;
 	private String body;
 	private String icon;
+	
+	
+	
 	public String getTitle() {
 		return title;
 	}
@@ -23,6 +26,7 @@ public class Notification
 	public void setIcon(String icon) {
 		this.icon = icon;
 	}
+	
 	
 }
 
