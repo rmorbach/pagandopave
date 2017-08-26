@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+
+	<title>Criar Campanha</title>
+
+	<!-- JQuery -->
+	<script src="js/jquery-2.2.1.js"></script>
+
+	<!-- bootstrap - link cdn -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	 crossorigin="anonymous">
+
+	<!-- incluindo css -->
+	<link href="css/style.css" rel="stylesheet">
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="images/favicon.ico" />
+</head>
+
+<body>
+
+	<script>
+		$(document).ready(function () {
+
+			$("#mensagem").hide();
+			$("#arquivo").change(function () {
+				console.log("imagem alterada")
+				readURL(this)
+			})
+
+			function readURL(input) {
+				if (input.files && input.files[0]) {
+					var reader = new FileReader()
+					reader.onload = function (e) {						
+						$("#preview-image").attr("src", e.target.result);
+					}
+					reader.readAsDataURL(input.files[0])
+				}
+			}
+
+			$("#button-publicar").click(function (e) {
+
+				console.log("Button chamado")
+				//Ajax
+				var formData = new FormData()
+
+				var arquivo = document.getElementById('arquivo').files[0];
+				var titulo = $("#titulo").val()
+				var descricao = $("#descricao").val()
+				var hora_inicio = $("#hora_inicio").val()
+				var hora_fim = $("#hora_fim").val()
+				var data_inicio = $("#data_inicio").val()
+				var data_fim = $("#data_fim").val()
+				var pessoas = $("#numero_pessoas").val()
+
+				formData.append("titulo", titulo)
+				formData.append("descricao", descricao)
+				formData.append("hora_inicio", hora_inicio)
+				formData.append("hora_fim", hora_fim)
+				formData.append("data_inicio", data_inicio)
+				formData.append("data_fim", data_fim)
+				formData.append("pessoas", pessoas)
+				formData.append("arquivo", arquivo)
+
+
+
+				var xhr = new XMLHttpRequest()
+
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState == 4) {
+						$("#mensagem").show();
+						$("#mensagem").html("Campanha criada com sucesso");
+						location.href = "/campanhas"
+					}
+				}
+
+				xhr.open('post', 'http://localhost:3000/criarCampanha/salvar/')
+				xhr.send(formData)
+
+			})
+		})
+	</script>
+
+
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				 aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+				<!-- <img src="images/logo.png" /> -->
+				<h3>Portal do Parceiro </h3>
+			</div>
+
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/campanhas">HOME</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="container">
+
+		<div class="alert alert-info" id="mensagem"></div>
+
+		<% if(validacao.length > 0) { %>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="alert alert-danger">
+						<strong>Atenção!</strong>
+						<ul>
+							<% for(var i = 0; i < validacao.length; i++) { %>
+								<li>
+									<%= validacao[i].msg %>
+								</li>
+								<% } %>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<% } %>
+				<div class="row">
+					<div class="col-md-12">
+						<!-- <form action="/criarCampanha/salvar" method="post" enctype="multipart/form-data"> -->
+						<div class="col-lg-12">
+							<div class="form-group">
+								<label for="titulo">Título:</label>
+								<input type="text" class="form-control" id="titulo" name="titulo">
+							</div>
+						</div>
+
+						<div class="col-lg-12">
+							<div class="form-group">
+								<label for="descricao">Descrição da campanha:</label>
+								<textarea class="form-control" id="descricao" name="descricao"></textarea>
+							</div>
+						</div>
+
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="data_inicio">Data de início:</label>
+								<input type="date" class="form-control" id="data_inicio" name="data_inicio">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="hora_inicio">Horário de início:</label>
+								<input type="time" class="form-control" id="hora_inicio" name="hora_inicio">
+							</div>
+						</div>
+
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="data_fim">Data de término:</label>
+								<input type="date" class="form-control" id="data_fim" name="data_fim">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="hora_fim">Horário de término:</label>
+								<input type="time" class="form-control" id="hora_fim" name="hora_fim">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="numero_pessoas">Número de pessoas:</label>
+								<input type="number" class="form-control" id="numero_pessoas" name="pessoas">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<input type="file" name="arquivo" id="arquivo">
+							</div>
+							<div class="form-group">
+									<img id="preview-image" width="300" height="auto"
+										class="col-lg-10 col-md-10 col-sm-12" />
+							</div>
+						</div>
+
+					</div>
+					<div class="col-lg-6">
+						<div class="form-group">
+							<button type="button" id="button-publicar" class="btn btn-default">Cadastrar</button>
+						</div>
+					</div>
+					<!-- </form> -->
+				</div>
+	</div>
+	</div>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+	 crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -10,3 +10,7 @@
 target/
 target/*
 /target/
+
+uploads/
+/uploads
+uploads/*

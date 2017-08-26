@@ -1,0 +1,21 @@
+{
+  "name": "partner-portal",
+  "version": "1.0.0",
+  "description": "Portal para cadastro de promoções",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rmorbach",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "connect-multiparty": "^2.0.0",
+    "consign": "^0.1.6",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "express-validator": "^3.2.1",
+    "mysql": "^2.14.1",
+    "request": "^2.81.0"
+  }
+}
