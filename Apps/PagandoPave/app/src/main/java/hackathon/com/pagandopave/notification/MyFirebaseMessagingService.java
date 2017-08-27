@@ -36,15 +36,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             String title = messageBody.get("title");
             String body = messageBody.get("body");
             buildNotification(title, body);
-
-            /*if (*//* Check if data needs to be processed by long running job *//* true) {
-                // For long-running tasks (10 seconds or more) use Firebase Job Dispatcher.
-                //scheduleJob();
-            } else {
-                // Handle message within 10 seconds
-                //handleNow();
-            }*/
-
         }
     }
 

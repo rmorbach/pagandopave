@@ -136,7 +136,7 @@
         android:layout_height="wrap_content"
         android:background="#F2C94C"
         android:layout_margin="8dp"
-        android:text="#paiprecisodegrana"
+        android:text="#precisodegrana"
         />
 
 </LinearLayout>

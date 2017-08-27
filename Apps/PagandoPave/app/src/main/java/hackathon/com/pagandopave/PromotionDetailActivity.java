@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -107,6 +108,21 @@ public class PromotionDetailActivity extends AppCompatActivity {
 
     private class PedirDinheiroAsyncTask extends AsyncTask<Void, Void, String> {
 
+        AlertDialog dialog;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(PromotionDetailActivity.this);
+
+            builder.setMessage("Pedido de grana enviado! \\o/\\o/")
+                                .setTitle("#sucesso");
+
+            dialog = builder.create();
+            dialog.show();
+        }
+
         @Override
         protected String doInBackground(Void... voids) {
 
@@ -135,6 +151,8 @@ public class PromotionDetailActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+
+            dialog.dismiss();
 
             Log.d(TAG, ""+s);
         }
