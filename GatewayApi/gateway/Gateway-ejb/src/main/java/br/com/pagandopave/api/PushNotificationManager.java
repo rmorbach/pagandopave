@@ -13,5 +13,4 @@ public interface PushNotificationManager {
 	
 	public boolean notifyAll(String input);
 	
-	public boolean register(String input);
 }

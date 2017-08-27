@@ -14,6 +14,7 @@ import br.com.pagandopave.entidade.Usuario;
 import br.com.pagandopave.model.InserirCreditoRequest;
 import br.com.pagandopave.model.NotificationParentRequest;
 import br.com.pagandopave.model.PedirDinheiroRequest;
+import br.com.pagandopave.model.RegisterTokenRequest;
 
 @Stateless
 public class MainManagerBean implements MainManager {
@@ -72,6 +73,25 @@ public class MainManagerBean implements MainManager {
 	public String buscarCampanhas() {
 			
 		return campanhaManager.buscarCampanhas();
+	}
+
+	@Override
+	public boolean registerToken(String input) {
+		
+		Gson gson = new Gson();
+		
+		RegisterTokenRequest registerReq = gson.fromJson(input, RegisterTokenRequest.class);
+				
+		System.out.println("[register] deviceId: " + registerReq.getDeviceId());
+		System.out.println("[register] token: " + registerReq.getToken());
+		
+		Usuario usuario = new Usuario();
+		usuario.setDeviceId(registerReq.getDeviceId());
+		usuario.setPushToken(registerReq.getToken());
+		
+		usuarioManager.cadastrar(usuario);
+		
+		return true;
 	}
 
 }

@@ -10,4 +10,6 @@ public interface MainManager {
 	public boolean pedirDinheiro(String input);
 	
 	public String buscarCampanhas();
+	
+	public boolean registerToken(String input);
 }

@@ -67,7 +67,7 @@ public class GatewayRESTFul {
 		System.out.println("[registerToken]");
 		
 		ObjectMapper mapper = new ObjectMapper();
-		return Response.status(200).entity(notificationManager.register(input)).build();		
+		return Response.status(200).entity(mainManager.registerToken(input)).build();		
 	}
 	
 	@POST

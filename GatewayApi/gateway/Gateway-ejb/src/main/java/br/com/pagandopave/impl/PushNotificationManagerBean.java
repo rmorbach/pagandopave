@@ -71,22 +71,7 @@ public class PushNotificationManagerBean implements PushNotificationManager {
 		boolean result = NotificationService.sendNotificationToDevice(notificationMessage);
 		
 		return result;
-	}
-
-	@Override
-	public boolean register(String input) {
-
-		System.out.println("[register]");
-		
-		Gson gson = new Gson();
-		
-		RegisterTokenRequest registerReq = gson.fromJson(input, RegisterTokenRequest.class);
-				
-		System.out.println("[register] deviceId: " + registerReq.getDeviceId());
-		System.out.println("[register] token: " + registerReq.getToken());
-		
-		return true;
-	}
+	}	
 
 	@Override
 	public boolean notifyAll(String input) {
