@@ -66,7 +66,6 @@
 							<contextRoot>/gateway</contextRoot>
 						</webModule>
 					</modules>
-					<outputDirectory>D:\Projetos\HackatonAgillitas\wildfly-10.1.0.Final\standalone\deployments</outputDirectory>
 				</configuration>
 			</plugin>
 		</plugins>
