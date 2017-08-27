@@ -1,7 +1,6 @@
 package hackathon.com.pagandopave.fragments;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,15 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import hackathon.com.pagandopave.MainActivity;
 import hackathon.com.pagandopave.adapters.PromotionAdapter;
 import hackathon.com.pagandopave.R;
-import hackathon.com.pagandopave.interfaces.OnFragmentInteractionListener;
+import hackathon.com.pagandopave.interfaces.OnFragmentPromotionInteractListener;
+import hackathon.com.pagandopave.model.Promotion;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link OnFragmentInteractionListener} interface
+ * {@link OnFragmentPromotionInteractListener} interface
  * to handle interaction events.
  * Use the {@link PromotionFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -35,7 +34,7 @@ public class PromotionFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
+    private OnFragmentPromotionInteractListener mListener;
 
     public PromotionFragment() {
         // Required empty public constructor
@@ -77,27 +76,27 @@ public class PromotionFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new PromotionAdapter(null);
+        mAdapter = new PromotionAdapter(this, null);
         mRecyclerView.setAdapter(mAdapter);
 
         return mRecyclerView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
+    public void onButtonPressed(Promotion promotion) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onPromotionClicked(promotion);
         }
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
+        if (context instanceof OnFragmentPromotionInteractListener) {
+            mListener = (OnFragmentPromotionInteractListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement OnFragmentPromotionInteractListener");
         }
     }
 

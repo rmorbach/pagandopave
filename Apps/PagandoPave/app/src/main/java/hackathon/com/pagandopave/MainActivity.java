@@ -1,8 +1,7 @@
 package hackathon.com.pagandopave;
 
-import android.app.FragmentManager;
 import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -16,10 +15,11 @@ import android.widget.TextView;
 import hackathon.com.pagandopave.fragments.ExtractFragment;
 import hackathon.com.pagandopave.fragments.PrizesFragment;
 import hackathon.com.pagandopave.fragments.PromotionFragment;
-import hackathon.com.pagandopave.interfaces.OnFragmentInteractionListener;
+import hackathon.com.pagandopave.interfaces.OnFragmentPromotionInteractListener;
+import hackathon.com.pagandopave.model.Promotion;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class MainActivity extends AppCompatActivity implements OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements OnFragmentPromotionInteractListener {
 
     ActionBar actionBar;
     TextView mActionBarTitle;
@@ -107,12 +107,13 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
     }
 
     @Override
-    public void onFragmentInteraction(Uri uri) {
-
+    public void onPromotionClicked(Promotion promotion) {
+        Intent intent = new Intent(MainActivity.this, PromotionDetailActivity.class);
+        intent.putExtra("promotion", promotion);
+        startActivity(intent);
     }
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
-
     }
 }

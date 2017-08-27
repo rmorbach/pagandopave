@@ -1,7 +1,5 @@
 package hackathon.com.pagandopave.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,13 +10,12 @@ import android.view.ViewGroup;
 
 import hackathon.com.pagandopave.R;
 import hackathon.com.pagandopave.adapters.PrizesAdapter;
-import hackathon.com.pagandopave.adapters.PromotionAdapter;
-import hackathon.com.pagandopave.interfaces.OnFragmentInteractionListener;
+import hackathon.com.pagandopave.interfaces.OnFragmentPromotionInteractListener;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link OnFragmentInteractionListener} interface
+ * {@link OnFragmentPromotionInteractListener} interface
  * to handle interaction events.
  * Use the {@link PrizesFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -27,15 +24,9 @@ public class PrizesFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-    private OnFragmentInteractionListener mListener;
 
     public PrizesFragment() {
         // Required empty public constructor
@@ -72,38 +63,14 @@ public class PrizesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        mRecyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_promotion, container, false);
+        RecyclerView mRecyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_promotion, container, false);
 
         mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new PrizesAdapter(null);
+        RecyclerView.Adapter mAdapter = new PrizesAdapter(null);
         mRecyclerView.setAdapter(mAdapter);
 
         return mRecyclerView;
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
     }
 }

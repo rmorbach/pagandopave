@@ -8,14 +8,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import hackathon.com.pagandopave.R;
+import hackathon.com.pagandopave.fragments.PromotionFragment;
 import hackathon.com.pagandopave.model.Promotion;
 
 public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.PromotionViewHolder> {
 
     Promotion[] promotions;
 
-    public PromotionAdapter(Promotion[] promotions) {
+    PromotionFragment fragment;
+
+    public PromotionAdapter(PromotionFragment fragment, Promotion[] promotions) {
         this.promotions = promotions;
+        this.fragment = fragment;
     }
 
     @Override
@@ -25,17 +29,24 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.Prom
     }
 
     @Override
-    public void onBindViewHolder(PromotionViewHolder holder, int position) {
-        //holder.prizeTitle.setText();
+    public void onBindViewHolder(PromotionViewHolder holder, final int position) {
+        holder.rootView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragment.onButtonPressed(promotions[position]);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 2;
+        if(promotions == null) return 2;
+        return promotions.length;
     }
 
-    public static class PromotionViewHolder extends RecyclerView.ViewHolder {
+    public class PromotionViewHolder extends RecyclerView.ViewHolder {
 
+        View rootView;
         ImageView promotionBanner;
         TextView promotionTitle;
         TextView promotionDescription;
@@ -43,6 +54,7 @@ public class PromotionAdapter extends RecyclerView.Adapter<PromotionAdapter.Prom
         public PromotionViewHolder(View itemView) {
             super(itemView);
 
+            rootView = itemView;
             promotionBanner = itemView.findViewById(R.id.card_item_promotion_image);
             promotionTitle = itemView.findViewById(R.id.card_item_promotion_title);
             promotionDescription = itemView.findViewById(R.id.card_item_promotion_description);
