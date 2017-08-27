@@ -7,19 +7,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardElevation="1dp"
-    android:layout_marginTop="1dp"
-    android:padding="4dp">
+    android:layout_marginTop="4dp"
+    android:padding="4dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:layout_marginBottom="8dp"
+    >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            >
 
             <ImageView
                 android:id="@+id/card_item_extract_category_icon"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:src="@drawable/cutlery"
                 android:padding="4dp"
                 />
@@ -38,22 +44,19 @@
                     android:textStyle="bold"
                     fontPath="fonts/Roboto-Bold.ttf"
                     android:textSize="18sp"
-                    android:text="R$50,00"
                     android:textColor="#F2994A"
                     tools:text="R$50,00"/>
-                <TextView
+                <!--<TextView
                     android:id="@+id/card_item_extract_category"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="#comida"
                     fontPath="fonts/Roboto-Regular.ttf"
                     android:textSize="16sp"
-                    tools:text="Testeeee"/>
+                    />-->
                 <TextView
                     android:id="@+id/card_item_extract_place"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Madero Stakehouse"
                     fontPath="fonts/Roboto-Thin.ttf"
                     android:textSize="18sp"
                     tools:text="Testeeee"/>
@@ -63,10 +66,9 @@
                 android:id="@+id/card_item_extract_date"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="26 AGO"
                 android:textSize="16sp"
                 fontPath="fonts/Roboto-Thin.ttf"
-                tools:text="Testeeee"/>
+                />
         </LinearLayout>
 
 </android.support.v7.widget.CardView>

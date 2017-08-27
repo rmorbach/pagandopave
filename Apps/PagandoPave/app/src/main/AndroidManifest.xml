@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +31,9 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".PromotionDetailActivity"></activity>
+        <activity android:name=".PromotionDetailActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".MeFragment"></activity>
     </application>
 
 </manifest>

@@ -20,6 +20,7 @@ public class NetworkUtils {
     private static final String GET_PROMOTIONS = "http://172.13.0.86:8080/gateway/rest/gateway/buscarCampanhas";
     private static final String GET_SALDO = "http://172.13.0.86:8080/gateway/rest/gateway/saldo";
     private static final String PEDIR_DINHEIRO = "http://172.13.0.86:8080/gateway/rest/gateway/pedirDinheiro";
+    private static final String GET_EXTRATO = "http://172.13.0.86:8080/gateway/rest/gateway/extrato";
 
     public static URL getRegisterTokenURL() throws MalformedURLException {
         return new URL(REGISTER_TOKEN_NOTIFICATION);
@@ -31,6 +32,14 @@ public class NetworkUtils {
 
     public static URL getSaldoURL() throws MalformedURLException {
         return new URL(GET_SALDO);
+    }
+
+    public static URL getPedirDinheiro() throws MalformedURLException {
+        return new URL(PEDIR_DINHEIRO);
+    }
+
+    public static URL getExtratoURL() throws MalformedURLException {
+        return new URL(GET_EXTRATO);
     }
 
     public static String doGet(URL url) {

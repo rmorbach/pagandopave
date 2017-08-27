@@ -7,47 +7,31 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import hackathon.com.pagandopave.R;
 import hackathon.com.pagandopave.adapters.ExtractAdapter;
-import hackathon.com.pagandopave.interfaces.OnFragmentPromotionInteractListener;
+import hackathon.com.pagandopave.model.Extract;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
-* {@link OnFragmentPromotionInteractListener} interface
- * to handle interaction events.
- * Use the {@link ExtractFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ExtractFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_SALDO = "saldo";
+    private static final String ARG_EXTRACT = "extract";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private float saldo;
+    private List<Extract> extracts;
 
     public ExtractFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-//     * @param param1 Parameter 1.
-//     * @param param2 Parameter 2.
-     * @return A new instance of fragment ExtractFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ExtractFragment newInstance() {
+    public static ExtractFragment newInstance(float saldo, ArrayList<Extract> extracts) {
         ExtractFragment fragment = new ExtractFragment();
         Bundle args = new Bundle();
-//        args.putString(ARG_PARAM1, param1);
-//        args.putString(ARG_PARAM2, param2);
+        args.putFloat(ARG_SALDO, saldo);
+        args.putParcelableArrayList(ARG_EXTRACT, extracts);
         fragment.setArguments(args);
         return fragment;
     }
@@ -56,8 +40,8 @@ public class ExtractFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            saldo = getArguments().getFloat(ARG_SALDO);
+            extracts = getArguments().getParcelableArrayList(ARG_EXTRACT);
         }
     }
 
@@ -66,13 +50,19 @@ public class ExtractFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_extract, container, false);
+
+        TextView saldoTextView = v.findViewById(R.id.saldo);
+
+        String saldoString = getString(R.string.saldo, saldo);
+        saldoTextView.setText(saldoString);
+
         // Inflate the layout for this fragment
         RecyclerView mRecyclerView = v.findViewById(R.id.extract_recycler_view);
 
         mRecyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        RecyclerView.Adapter mAdapter = new ExtractAdapter(null);
+        RecyclerView.Adapter mAdapter = new ExtractAdapter(extracts);
         mRecyclerView.setAdapter(mAdapter);
 
         return v;

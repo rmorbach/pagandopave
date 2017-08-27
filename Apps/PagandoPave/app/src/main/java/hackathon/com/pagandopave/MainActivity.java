@@ -31,6 +31,7 @@ import hackathon.com.pagandopave.fragments.ExtractFragment;
 import hackathon.com.pagandopave.fragments.PrizesFragment;
 import hackathon.com.pagandopave.fragments.PromotionFragment;
 import hackathon.com.pagandopave.interfaces.OnFragmentPromotionInteractListener;
+import hackathon.com.pagandopave.model.Extract;
 import hackathon.com.pagandopave.model.Promotion;
 import hackathon.com.pagandopave.network.NetworkUtils;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -40,7 +41,8 @@ public class MainActivity extends AppCompatActivity implements OnFragmentPromoti
     private static final String TAG = MainActivity.class.getSimpleName();
 
     ArrayList<Promotion> promotions;
-    double saldo;
+    ArrayList<Extract> extracts;
+    float saldo;
 
     ActionBar actionBar;
     TextView mActionBarTitle;
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentPromoti
 
                                 android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
                                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                ExtractFragment extractFragment = new ExtractFragment();
+                                ExtractFragment extractFragment = ExtractFragment.newInstance(saldo, extracts);
                                 fragmentTransaction.replace(R.id.fragment_container, extractFragment);
                                 fragmentTransaction.commit();
 
@@ -114,6 +116,21 @@ public class MainActivity extends AppCompatActivity implements OnFragmentPromoti
                                 if(mActionBarTitle != null) {
                                     mActionBarTitle.setText("Conquistas");
                                 }
+
+                                break;
+                            }
+                            case R.id.action_account: {
+                                android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                MeFragment meFragment = new MeFragment();
+                                fragmentTransaction.replace(R.id.fragment_container, meFragment);
+                                fragmentTransaction.commit();
+
+                                if(mActionBarTitle != null) {
+                                    mActionBarTitle.setText("Eu");
+                                }
+
+                                break;
                             }
 
                         }
@@ -122,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements OnFragmentPromoti
                 });
 
         new GetPromotionsAsyncTask().execute();
+        new GetExtratoAsyncTask().execute();
     }
 
     @Override
@@ -223,8 +241,58 @@ public class MainActivity extends AppCompatActivity implements OnFragmentPromoti
             Log.d(TAG, "response = "+ s);
 
             if(!TextUtils.isEmpty(s)) {
-                saldo = Double.parseDouble(s);
+                saldo = Float.parseFloat(s);
             }
+        }
+    }
+
+    private class GetExtratoAsyncTask extends AsyncTask<Void, Void, String> {
+
+        @Override
+        protected String doInBackground(Void... voids) {
+
+            try {
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                String idCartao = preferences.getString("idCartao", "3713100019087");
+                URL url = NetworkUtils.getExtratoURL();
+
+                JSONObject getExtratoJsonObject = new JSONObject();
+                getExtratoJsonObject.put("idCartao", idCartao);
+                return NetworkUtils.doPost(url, getExtratoJsonObject.toString());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+            Log.d(TAG, "GET EXTRATO response = "+ s);
+
+            if(s != null) {
+                parseExtrato(s);
+            }
+        }
+    }
+
+    private void parseExtrato(String responseJson) {
+        try {
+            JSONObject responseJsonObject = new JSONObject(responseJson);
+
+            JSONArray extractJsonArray = responseJsonObject.getJSONArray("extrato");
+
+            extracts = new ArrayList<>();
+
+            for(int i = 0; i < extractJsonArray.length(); i++) {
+                Extract extract = new Extract((JSONObject) extractJsonArray.get(i));
+                extracts.add(extract);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 }
