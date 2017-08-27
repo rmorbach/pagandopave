@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KOl-TA-tSE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dar mesada-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Dar mesada" id="BYZ-38-t0r" customClass="ViewController" customModule="PagandoPave" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="xX2-0i-F8h">
+                                <rect key="frame" x="137" y="84" width="100" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="8xE-kg-QPd"/>
+                                    <constraint firstAttribute="width" constant="100" id="UnH-v5-Rs1"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOv-MT-ckL" customClass="VisaCheckoutButton" customModule="PagandoPave" customModuleProvider="target">
+                                <rect key="frame" x="81" y="343.5" width="213" height="47"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Que tal dar uma mesada?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atp-Du-SZ8">
+                                <rect key="frame" x="24" y="317.5" width="327" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$28,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOS-sS-Ooh">
+                                <rect key="frame" x="137.5" y="205.5" width="101" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.1764705882" green="0.61176470589999998" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joãozinho precisa de" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ie-va-iFe">
+                                <rect key="frame" x="8" y="169" width="359" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="para aproveitar a promoção" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sR7-eh-chp">
+                                <rect key="frame" x="8" y="249.5" width="359" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSD-oR-bhD">
+                                <rect key="frame" x="8" y="285.5" width="359" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qOv-MT-ckL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.1" id="0Fx-HY-KL5"/>
+                            <constraint firstAttribute="trailing" secondItem="VSD-oR-bhD" secondAttribute="trailing" constant="8" id="2Bt-xI-GIP"/>
+                            <constraint firstItem="sR7-eh-chp" firstAttribute="top" secondItem="tOS-sS-Ooh" secondAttribute="bottom" constant="15" id="4XN-hf-1QR"/>
+                            <constraint firstItem="tOS-sS-Ooh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8SU-jD-GnQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Atp-Du-SZ8" secondAttribute="trailing" constant="8" id="Bji-xC-LMU"/>
+                            <constraint firstItem="7ie-va-iFe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="Epe-X5-hWP"/>
+                            <constraint firstItem="tOS-sS-Ooh" firstAttribute="top" secondItem="7ie-va-iFe" secondAttribute="bottom" constant="15" id="H5K-6V-Ni8"/>
+                            <constraint firstItem="VSD-oR-bhD" firstAttribute="top" secondItem="sR7-eh-chp" secondAttribute="bottom" constant="15" id="KLU-6H-aA0"/>
+                            <constraint firstAttribute="trailing" secondItem="7ie-va-iFe" secondAttribute="trailing" constant="8" id="T3b-sq-2wW"/>
+                            <constraint firstItem="xX2-0i-F8h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WEB-lu-CTF"/>
+                            <constraint firstItem="sR7-eh-chp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="ZjJ-7N-Oi4"/>
+                            <constraint firstItem="xX2-0i-F8h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="dXJ-qi-CKD"/>
+                            <constraint firstAttribute="trailing" secondItem="sR7-eh-chp" secondAttribute="trailing" constant="8" id="gPa-mv-6v4"/>
+                            <constraint firstItem="VSD-oR-bhD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gyF-7o-ars"/>
+                            <constraint firstItem="qOv-MT-ckL" firstAttribute="top" secondItem="Atp-Du-SZ8" secondAttribute="bottom" constant="5" id="i0C-Sf-h1l"/>
+                            <constraint firstItem="qOv-MT-ckL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iXR-PM-jdF"/>
+                            <constraint firstItem="7ie-va-iFe" firstAttribute="top" secondItem="xX2-0i-F8h" secondAttribute="bottom" constant="10" id="ouW-ri-yLu"/>
+                            <constraint firstItem="Atp-Du-SZ8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="sgn-mC-j3E"/>
+                            <constraint firstItem="sR7-eh-chp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uRV-R3-BIm"/>
+                            <constraint firstItem="VSD-oR-bhD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="wIT-jO-jqw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dar mesada" id="Tjs-HV-q1b"/>
+                    <connections>
+                        <outlet property="event" destination="VSD-oR-bhD" id="v5t-JT-mBo"/>
+                        <outlet property="message" destination="7ie-va-iFe" id="y5D-Mp-l7Z"/>
+                        <outlet property="value" destination="tOS-sS-Ooh" id="eam-2V-wsO"/>
+                        <outlet property="visaCheckoutButton" destination="qOv-MT-ckL" id="cfc-hu-j1G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1244" y="-645"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GIq-kZ-UqK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KOl-TA-tSE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ylF-J5-Y1h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.1764705882352941" green="0.61176470588235299" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.1764705882" green="0.61176470589999998" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" red="0.1764705882" green="0.61176470589999998" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="e21-Zn-3Dy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXt-Ib-Fyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-122.40000000000001" y="-645.42728635682158"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="card" width="150" height="109"/>
+    </resources>
+</document>

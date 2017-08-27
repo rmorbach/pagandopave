@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5E541F501F51EBD100F42AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E541F4F1F51EBD100F42AD7 /* AppDelegate.swift */; };
+		5E541F521F51EBD100F42AD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E541F511F51EBD100F42AD7 /* ViewController.swift */; };
+		5E541F551F51EBD100F42AD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E541F531F51EBD100F42AD7 /* Main.storyboard */; };
+		5E541F571F51EBD100F42AD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E541F561F51EBD100F42AD7 /* Assets.xcassets */; };
+		5E541F5A1F51EBD100F42AD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E541F581F51EBD100F42AD7 /* LaunchScreen.storyboard */; };
+		5E541F631F51F87E00F42AD7 /* TrustDefender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E541F621F51F87E00F42AD7 /* TrustDefender.framework */; };
+		5E541F651F51F88300F42AD7 /* VisaCheckoutSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E541F641F51F88300F42AD7 /* VisaCheckoutSDK.framework */; };
+		5E541F6A1F51F8BB00F42AD7 /* VisaCheckoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E541F691F51F8BB00F42AD7 /* VisaCheckoutButton.swift */; };
+		5E541F6C1F51F8D500F42AD7 /* VisaCheckoutSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5E541F641F51F88300F42AD7 /* VisaCheckoutSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5E541F701F51F96100F42AD7 /* VisaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E541F6F1F51F96100F42AD7 /* VisaConfig.swift */; };
+		5E541F741F52034700F42AD7 /* CyberSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E541F731F52034700F42AD7 /* CyberSourceManager.swift */; };
+		5E541F761F52038800F42AD7 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E541F751F52038800F42AD7 /* Network.swift */; };
+		5E541F791F52049100F42AD7 /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E541F781F52049100F42AD7 /* Credit.swift */; };
+		5E541F7B1F520A9600F42AD7 /* PVManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E541F7A1F520A9600F42AD7 /* PVManager.swift */; };
+		5E541F7D1F520CF000F42AD7 /* NotifyCredit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E541F7C1F520CF000F42AD7 /* NotifyCredit.swift */; };
+		5E541F801F5211BF00F42AD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E541F7F1F5211BF00F42AD7 /* GoogleService-Info.plist */; };
+		5E541F841F52131900F42AD7 /* PVConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E541F831F52131900F42AD7 /* PVConfig.swift */; };
+		5E541F881F52581A00F42AD7 /* RegisterPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E541F871F52581A00F42AD7 /* RegisterPush.swift */; };
+		B2068A446B9A488ADD013714 /* Pods_PagandoPave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1829DC92F471AED3738E662 /* Pods_PagandoPave.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5E541F6D1F51F8D500F42AD7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5E541F6C1F51F8D500F42AD7 /* VisaCheckoutSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		393CE29B9B82A7CD66CE1FD5 /* Pods-PagandoPave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PagandoPave.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PagandoPave/Pods-PagandoPave.debug.xcconfig"; sourceTree = "<group>"; };
+		5E541F4C1F51EBD100F42AD7 /* PagandoPave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PagandoPave.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E541F4F1F51EBD100F42AD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5E541F511F51EBD100F42AD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5E541F541F51EBD100F42AD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5E541F561F51EBD100F42AD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5E541F591F51EBD100F42AD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5E541F5B1F51EBD100F42AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E541F621F51F87E00F42AD7 /* TrustDefender.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TrustDefender.framework; path = PagandoPave/TrustDefender.framework; sourceTree = "<group>"; };
+		5E541F641F51F88300F42AD7 /* VisaCheckoutSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VisaCheckoutSDK.framework; path = PagandoPave/VisaCheckoutSDK.framework; sourceTree = "<group>"; };
+		5E541F691F51F8BB00F42AD7 /* VisaCheckoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisaCheckoutButton.swift; sourceTree = "<group>"; };
+		5E541F6F1F51F96100F42AD7 /* VisaConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisaConfig.swift; sourceTree = "<group>"; };
+		5E541F731F52034700F42AD7 /* CyberSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyberSourceManager.swift; sourceTree = "<group>"; };
+		5E541F751F52038800F42AD7 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		5E541F781F52049100F42AD7 /* Credit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
+		5E541F7A1F520A9600F42AD7 /* PVManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVManager.swift; sourceTree = "<group>"; };
+		5E541F7C1F520CF000F42AD7 /* NotifyCredit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyCredit.swift; sourceTree = "<group>"; };
+		5E541F7F1F5211BF00F42AD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5E541F831F52131900F42AD7 /* PVConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVConfig.swift; sourceTree = "<group>"; };
+		5E541F851F52164B00F42AD7 /* PagandoPave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PagandoPave.entitlements; sourceTree = "<group>"; };
+		5E541F871F52581A00F42AD7 /* RegisterPush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPush.swift; sourceTree = "<group>"; };
+		6F59BEB8A954583BB26D5905 /* Pods-PagandoPave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PagandoPave.release.xcconfig"; path = "Pods/Target Support Files/Pods-PagandoPave/Pods-PagandoPave.release.xcconfig"; sourceTree = "<group>"; };
+		F1829DC92F471AED3738E662 /* Pods_PagandoPave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PagandoPave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5E541F491F51EBD100F42AD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E541F651F51F88300F42AD7 /* VisaCheckoutSDK.framework in Frameworks */,
+				5E541F631F51F87E00F42AD7 /* TrustDefender.framework in Frameworks */,
+				B2068A446B9A488ADD013714 /* Pods_PagandoPave.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E2F6EF1E722FA314E86E8A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				393CE29B9B82A7CD66CE1FD5 /* Pods-PagandoPave.debug.xcconfig */,
+				6F59BEB8A954583BB26D5905 /* Pods-PagandoPave.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5E541F431F51EBD100F42AD7 = {
+			isa = PBXGroup;
+			children = (
+				5E541F4E1F51EBD100F42AD7 /* PagandoPave */,
+				5E541F4D1F51EBD100F42AD7 /* Products */,
+				4E2F6EF1E722FA314E86E8A0 /* Pods */,
+				F2BEBE2149CD83AEB963E16A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5E541F4D1F51EBD100F42AD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F4C1F51EBD100F42AD7 /* PagandoPave.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5E541F4E1F51EBD100F42AD7 /* PagandoPave */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F861F52580800F42AD7 /* Model */,
+				5E541F851F52164B00F42AD7 /* PagandoPave.entitlements */,
+				5E541F821F52130E00F42AD7 /* Config */,
+				5E541F811F5212DF00F42AD7 /* Manager */,
+				5E541F7E1F5211B800F42AD7 /* Resources */,
+				5E541F611F51F86500F42AD7 /* Visa */,
+				5E541F4F1F51EBD100F42AD7 /* AppDelegate.swift */,
+				5E541F511F51EBD100F42AD7 /* ViewController.swift */,
+				5E541F531F51EBD100F42AD7 /* Main.storyboard */,
+				5E541F561F51EBD100F42AD7 /* Assets.xcassets */,
+				5E541F581F51EBD100F42AD7 /* LaunchScreen.storyboard */,
+				5E541F5B1F51EBD100F42AD7 /* Info.plist */,
+			);
+			path = PagandoPave;
+			sourceTree = "<group>";
+		};
+		5E541F611F51F86500F42AD7 /* Visa */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F771F52048400F42AD7 /* Model */,
+				5E541F721F52033600F42AD7 /* Manager */,
+				5E541F711F51FEF800F42AD7 /* Network */,
+				5E541F6E1F51F95400F42AD7 /* Config */,
+				5E541F661F51F89800F42AD7 /* View */,
+			);
+			name = Visa;
+			sourceTree = "<group>";
+		};
+		5E541F661F51F89800F42AD7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F691F51F8BB00F42AD7 /* VisaCheckoutButton.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5E541F681F51F8AC00F42AD7 /* Visa */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F641F51F88300F42AD7 /* VisaCheckoutSDK.framework */,
+				5E541F621F51F87E00F42AD7 /* TrustDefender.framework */,
+			);
+			name = Visa;
+			sourceTree = "<group>";
+		};
+		5E541F6E1F51F95400F42AD7 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F6F1F51F96100F42AD7 /* VisaConfig.swift */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		5E541F711F51FEF800F42AD7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F751F52038800F42AD7 /* Network.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		5E541F721F52033600F42AD7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F731F52034700F42AD7 /* CyberSourceManager.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		5E541F771F52048400F42AD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F781F52049100F42AD7 /* Credit.swift */,
+				5E541F7C1F520CF000F42AD7 /* NotifyCredit.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5E541F7E1F5211B800F42AD7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F7F1F5211BF00F42AD7 /* GoogleService-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5E541F811F5212DF00F42AD7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F7A1F520A9600F42AD7 /* PVManager.swift */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		5E541F821F52130E00F42AD7 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F831F52131900F42AD7 /* PVConfig.swift */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		5E541F861F52580800F42AD7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F871F52581A00F42AD7 /* RegisterPush.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F2BEBE2149CD83AEB963E16A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E541F681F51F8AC00F42AD7 /* Visa */,
+				F1829DC92F471AED3738E662 /* Pods_PagandoPave.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5E541F4B1F51EBD100F42AD7 /* PagandoPave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E541F5E1F51EBD100F42AD7 /* Build configuration list for PBXNativeTarget "PagandoPave" */;
+			buildPhases = (
+				AA659DB7B4941E105F1758F0 /* [CP] Check Pods Manifest.lock */,
+				5E541F481F51EBD100F42AD7 /* Sources */,
+				5E541F491F51EBD100F42AD7 /* Frameworks */,
+				5E541F4A1F51EBD100F42AD7 /* Resources */,
+				3739274C8EB745F6AF7FE582 /* [CP] Embed Pods Frameworks */,
+				C724F248F4ACDA888094263A /* [CP] Copy Pods Resources */,
+				5E541F6D1F51F8D500F42AD7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PagandoPave;
+			productName = PagandoPave;
+			productReference = 5E541F4C1F51EBD100F42AD7 /* PagandoPave.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5E541F441F51EBD100F42AD7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Morbach Inc.";
+				TargetAttributes = {
+					5E541F4B1F51EBD100F42AD7 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 338925J9EV;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 5E541F471F51EBD100F42AD7 /* Build configuration list for PBXProject "PagandoPave" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5E541F431F51EBD100F42AD7;
+			productRefGroup = 5E541F4D1F51EBD100F42AD7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5E541F4B1F51EBD100F42AD7 /* PagandoPave */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5E541F4A1F51EBD100F42AD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E541F5A1F51EBD100F42AD7 /* LaunchScreen.storyboard in Resources */,
+				5E541F801F5211BF00F42AD7 /* GoogleService-Info.plist in Resources */,
+				5E541F571F51EBD100F42AD7 /* Assets.xcassets in Resources */,
+				5E541F551F51EBD100F42AD7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3739274C8EB745F6AF7FE582 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PagandoPave/Pods-PagandoPave-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA659DB7B4941E105F1758F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C724F248F4ACDA888094263A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PagandoPave/Pods-PagandoPave-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5E541F481F51EBD100F42AD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E541F7D1F520CF000F42AD7 /* NotifyCredit.swift in Sources */,
+				5E541F701F51F96100F42AD7 /* VisaConfig.swift in Sources */,
+				5E541F7B1F520A9600F42AD7 /* PVManager.swift in Sources */,
+				5E541F881F52581A00F42AD7 /* RegisterPush.swift in Sources */,
+				5E541F521F51EBD100F42AD7 /* ViewController.swift in Sources */,
+				5E541F761F52038800F42AD7 /* Network.swift in Sources */,
+				5E541F6A1F51F8BB00F42AD7 /* VisaCheckoutButton.swift in Sources */,
+				5E541F791F52049100F42AD7 /* Credit.swift in Sources */,
+				5E541F841F52131900F42AD7 /* PVConfig.swift in Sources */,
+				5E541F501F51EBD100F42AD7 /* AppDelegate.swift in Sources */,
+				5E541F741F52034700F42AD7 /* CyberSourceManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5E541F531F51EBD100F42AD7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E541F541F51EBD100F42AD7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5E541F581F51EBD100F42AD7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E541F591F51EBD100F42AD7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5E541F5C1F51EBD100F42AD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5E541F5D1F51EBD100F42AD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E541F5F1F51EBD100F42AD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 393CE29B9B82A7CD66CE1FD5 /* Pods-PagandoPave.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PagandoPave/PagandoPave.entitlements;
+				DEVELOPMENT_TEAM = 338925J9EV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PagandoPave",
+				);
+				INFOPLIST_FILE = PagandoPave/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.morbachrodrigo.PagandoPave;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c8729e76-7947-42b3-ac72-16c4dc06585e";
+				PROVISIONING_PROFILE_SPECIFIER = PagandoPaveDev;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5E541F601F51EBD100F42AD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F59BEB8A954583BB26D5905 /* Pods-PagandoPave.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PagandoPave/PagandoPave.entitlements;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PagandoPave",
+				);
+				INFOPLIST_FILE = PagandoPave/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.morbachrodrigo.PagandoPave;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E541F471F51EBD100F42AD7 /* Build configuration list for PBXProject "PagandoPave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E541F5C1F51EBD100F42AD7 /* Debug */,
+				5E541F5D1F51EBD100F42AD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E541F5E1F51EBD100F42AD7 /* Build configuration list for PBXNativeTarget "PagandoPave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E541F5F1F51EBD100F42AD7 /* Debug */,
+				5E541F601F51EBD100F42AD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5E541F441F51EBD100F42AD7 /* Project object */;
+}
