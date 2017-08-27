@@ -13,14 +13,37 @@ a:hover{
 	margin-bottom:15px;
 	box-shadow: 1px 1px 2px #C3C3C3;
 }
-
+#criarCampanha a{
+	color: #F2C94C !important;
+}
 .navbar{
-	background:#FFF;
+	background:#2D9CDB;
+}
+.title{
+	color: #ffffff;
+}
+
+.navbar-default .navbar-nav>li>a
+{
+	color: #ffffff !important;
 }
 
 .noticia_autor{
 	color: #FF7C26;
 	display: block;
+}
+
+.value-new{
+	color: #2D9CDB;
+	font-size: 20px;
+}
+
+.value{
+	color: #828282;
+}
+
+.value-old{
+	color: #828282
 }
 
 .noticia_titulo{
@@ -32,6 +55,7 @@ a:hover{
 .noticia_data{
 	color:#727272;
 	display: block;
+	padding: 20px 20px 30px 0px;
 }
 
 .noticia_resumo{
@@ -43,4 +67,8 @@ a:hover{
 	text-align: center;
 	background:#FFF;
 	padding:20px;
+}
+
+nav img{
+	margin-top: 15%;
 }

@@ -5,8 +5,8 @@ module.exports.getCampanhas = function (application, req, res) {
 	var connection = application.config.dbConnection();
 	var noticiasModel = new application.app.models.CampanhaDAO(connection);
 
-	noticiasModel.getCampanhas(function (error, result) {		
-		res.render("campanhas/index.ejs", { campanhas: result });
+	noticiasModel.getCampanhas(function (error, result) {				
+		res.render("campanhas/index.ejs", { campanhas: result});
 	});
 }
 module.exports.criarCampanha = function (application, req, res) {
@@ -17,12 +17,14 @@ module.exports.salvar = function (application, req, res) {
 
 	var campanha = req.body;
 
-	campanha.id_parceiro = 1
+	campanha.idParceiro = 1
 
 	/**
 	 * Salvar imagem
 	 * 
 	 */
+
+	
 
 	var now = new Date().getTime()
 
@@ -39,7 +41,7 @@ module.exports.salvar = function (application, req, res) {
 			res.status(500).json(err)
 			return
 		}
-		campanha.fotopath = imageName
+		campanha.fotopath = "http://172.13.0.77:3000/images/"+imageName
 		
 		var connection = application.config.dbConnection();
 		var campanhasModel = new application.app.models.CampanhaDAO(connection);
