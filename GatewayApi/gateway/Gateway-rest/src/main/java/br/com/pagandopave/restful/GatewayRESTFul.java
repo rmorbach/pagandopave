@@ -48,15 +48,8 @@ public class GatewayRESTFul {
 	public Response notifyAll(String input) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
 		return Response.status(200).entity(notificationManager.notifyAll(input)).build();		
-	}
+	}	
 	
-	@POST
-	@Path("/notifyParent")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response notifyParent(String input) throws IOException {
-		ObjectMapper mapper = new ObjectMapper();
-		return Response.status(200).entity(notificationManager.notifyParent(input)).build();		
-	}
 	
 	@POST
 	@Path("/notifyTeen")
@@ -117,7 +110,7 @@ public class GatewayRESTFul {
 		System.out.println("[buscarCampanhas]");
 		
 		ObjectMapper mapper = new ObjectMapper();
-		return Response.status(200).entity(campanhaManager.buscarCampanhas()).build();		
+		return Response.status(200).entity(mainManager.buscarCampanhas()).build();		
 	}
 	
 	@POST
@@ -128,6 +121,6 @@ public class GatewayRESTFul {
 		System.out.println("[pedirDinheiro]");
 		
 		ObjectMapper mapper = new ObjectMapper();
-		return Response.status(200).entity(campanhaManager.buscarCampanhas()).build();		
+		return Response.status(200).entity(mainManager.pedirDinheiro(input)).build();		
 	}
 }

@@ -6,4 +6,8 @@ import javax.ejb.Local;
 public interface MainManager {
 
 	public boolean inserirCredito(String input);
+	
+	public boolean pedirDinheiro(String input);
+	
+	public String buscarCampanhas();
 }

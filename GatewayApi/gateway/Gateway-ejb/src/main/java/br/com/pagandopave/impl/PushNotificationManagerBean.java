@@ -5,6 +5,7 @@ import javax.ejb.Stateless;
 import com.google.gson.Gson;
 
 import br.com.pagandopave.api.PushNotificationManager;
+import br.com.pagandopave.model.NotificationParentRequest;
 import br.com.pagandopave.model.NotificationRequest;
 import br.com.pagandopave.model.RegisterTokenRequest;
 import br.com.pagandopave.notification.model.Data;
@@ -25,15 +26,23 @@ public class PushNotificationManagerBean implements PushNotificationManager {
 			"Olá, %s! Seu cartão foi recarregado! Agora seu saldo é de %s. Use com responsabilidade, hein!";
 	
 	@Override
-	public boolean notifyParent(String input) {
+	public boolean notifyParent(NotificationParentRequest input) {
 			
 		NotificationMessage notificationMessage = new NotificationMessage();
-		notificationMessage.setTo("token");
+		notificationMessage.setTo(input.getToken());
+				
+		Data data = new Data();
+		data.setFilho(input.getFilho());
+		data.setNomeEvento(input.getNomeEvento());
+		data.setValor(input.getValor());
+		data.setNumeroCartao(input.getNumeroCartao());
 		
 		Notification notification = new Notification();
+		notification.setTitle("Nova promoção no ar!");
+		notification.setBody("Body");
 		
-		Data data = new Data();
-		data.setFilho(filho);
+		notificationMessage.setNotification(notification);
+		notificationMessage.setData(data);
 		
 		boolean result = NotificationService.sendNotificationToDevice(notificationMessage);
 		
@@ -43,10 +52,7 @@ public class PushNotificationManagerBean implements PushNotificationManager {
 	@Override
 	public boolean notifyTeen(String input) {
 
-		Gson gson = new Gson();
-		
-			
-		
+		Gson gson = new Gson();		
 		
 		NotificationMessage notificationMessage = new NotificationMessage();
 		notificationMessage.setTo("fobvU3KbiDo:APA91bGlRN87CqSXLHdS8Z7t8oS38hH0onVr0u-jStPiCmqcA7nlX009zR1GgceylUSlJ3QW2J8DrKW0egq2W8JR3mCTZ0ZD5McQLbLUcfJ_ZSUjnfhlqNSdwOBAob12iCwklFldwTPB");
@@ -87,6 +93,24 @@ public class PushNotificationManagerBean implements PushNotificationManager {
 
 		System.out.println("[notifyAll]");
 		
-		return true;
+		Gson gson = new Gson();		
+		
+		NotificationMessage notificationMessage = new NotificationMessage();
+		notificationMessage.setTo("fobvU3KbiDo:APA91bGlRN87CqSXLHdS8Z7t8oS38hH0onVr0u-jStPiCmqcA7nlX009zR1GgceylUSlJ3QW2J8DrKW0egq2W8JR3mCTZ0ZD5McQLbLUcfJ_ZSUjnfhlqNSdwOBAob12iCwklFldwTPB");
+		
+		Notification notification = new Notification();
+		Data data = new Data();
+		
+		data.setTitle("Promocao!!");
+		data.setBody("Confira a promocao da semana. Pague seis leve meia duzia.");
+		
+		notificationMessage.setData(data);
+		
+		//notification.setBody("");
+		//notification.setTitle(request.getTitulo());
+		
+		boolean result = NotificationService.sendNotificationToDevice(notificationMessage);		
+		
+		return result;
 	}	
 }
