@@ -21,10 +21,6 @@ public class Campanha implements Serializable {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@ManyToOne
-	@JoinColumn(name = "id")
-	private Parceiro parceiro;
-
 	private String titulo;
 	private String descricao;
 	private int pessoas;
@@ -35,6 +31,10 @@ public class Campanha implements Serializable {
 	private String hora_fim;
 	private String valor_original;
 	private String valor_final;
+	
+	@ManyToOne
+	@JoinColumn(name = "idParceiro")
+	private Parceiro parceiro;
 
 	public Campanha() {
 
