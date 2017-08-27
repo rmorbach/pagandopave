@@ -17,9 +17,20 @@ public class NetworkUtils {
     private static final String TAG = NetworkUtils.class.getSimpleName();
 
     private static final String REGISTER_TOKEN_NOTIFICATION = "http://172.13.0.86:8080/gateway/rest/gateway/register";
+    private static final String GET_PROMOTIONS = "http://172.13.0.86:8080/gateway/rest/gateway/buscarCampanhas";
+    private static final String GET_SALDO = "http://172.13.0.86:8080/gateway/rest/gateway/saldo";
+    private static final String PEDIR_DINHEIRO = "http://172.13.0.86:8080/gateway/rest/gateway/pedirDinheiro";
 
     public static URL getRegisterTokenURL() throws MalformedURLException {
         return new URL(REGISTER_TOKEN_NOTIFICATION);
+    }
+
+    public static URL getPromotionsURL() throws MalformedURLException {
+        return new URL(GET_PROMOTIONS);
+    }
+
+    public static URL getSaldoURL() throws MalformedURLException {
+        return new URL(GET_SALDO);
     }
 
     public static String doGet(URL url) {

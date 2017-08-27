@@ -9,30 +9,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import hackathon.com.pagandopave.adapters.PromotionAdapter;
 import hackathon.com.pagandopave.R;
 import hackathon.com.pagandopave.interfaces.OnFragmentPromotionInteractListener;
 import hackathon.com.pagandopave.model.Promotion;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link OnFragmentPromotionInteractListener} interface
- * to handle interaction events.
- * Use the {@link PromotionFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class PromotionFragment extends Fragment {
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_PROMOTIONS = "promotions";
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private List<Promotion> promotionList;
 
     private OnFragmentPromotionInteractListener mListener;
 
@@ -40,20 +28,10 @@ public class PromotionFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-//     * @param param1 Parameter 1.
-//     * @param param2 Parameter 2.
-     * @return A new instance of fragment PromotionFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PromotionFragment newInstance(/*String param1, String param2*/) {
+    public static PromotionFragment newInstance(ArrayList<Promotion> promotions) {
         PromotionFragment fragment = new PromotionFragment();
         Bundle args = new Bundle();
-//        args.putString(ARG_PARAM1, param1);
-//        args.putString(ARG_PARAM2, param2);
+        args.putParcelableArrayList(ARG_PROMOTIONS, promotions);
         fragment.setArguments(args);
         return fragment;
     }
@@ -62,8 +40,7 @@ public class PromotionFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            promotionList = getArguments().getParcelableArrayList(ARG_PROMOTIONS);
         }
     }
 
@@ -71,18 +48,17 @@ public class PromotionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        mRecyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_promotion, container, false);
+        RecyclerView mRecyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_promotion, container, false);
 
         mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new PromotionAdapter(this, null);
+        RecyclerView.Adapter mAdapter = new PromotionAdapter(this, promotionList);
         mRecyclerView.setAdapter(mAdapter);
 
         return mRecyclerView;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Promotion promotion) {
         if (mListener != null) {
             mListener.onPromotionClicked(promotion);

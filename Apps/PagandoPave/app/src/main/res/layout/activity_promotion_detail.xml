@@ -3,18 +3,37 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp"
     tools:context="hackathon.com.pagandopave.PromotionDetailActivity"
     android:orientation="vertical"
     >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:title=""
+        android:elevation="4dp">
+        <TextView
+            android:id="@+id/action_bar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#tarolando"
+            android:textColor="#FFF"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            />
+    </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         >
 
         <LinearLayout
@@ -29,8 +48,8 @@
                 android:orientation="horizontal">
                 <ImageView
                     android:id="@+id/partner_logo"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_margin="4dp"
                     android:src="@drawable/placeholder_cia"
                     />
@@ -47,19 +66,20 @@
                         android:id="@+id/partner_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        fontPath="fonts/Roboto-Bold.ttf"
                         android:text="ifood"/>
                     <TextView
                         android:id="@+id/partner_subtitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="aaaiiifuud"/>
+                        android:text=""/>
                 </LinearLayout>
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/promotion_banner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="180dp"
                 android:src="@drawable/placeholder"
                 android:scaleType="centerCrop"
                 />
@@ -71,6 +91,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:textSize="18sp"
+                fontPath="fonts/Roboto-Regular.ttf"
                 android:text="R$ 15,00 de crédito na sua fatura! Você não vai perder, né?! É simples! Pague dois pedidos de R$ 35 ou mais (cada) pelo Visa Checkout e ganhe R$ 15 de crédito na sua fatura. Você pode receber até 4 créditos durante o período da promoção."
                 />
 
@@ -81,7 +102,8 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="4dp"
                 android:textSize="18sp"
-                android:text="PREÇO: R$ 30,00"
+                android:text="@string/original_price"
+                fontPath="fonts/Roboto-Regular.ttf"
                 />
 
             <TextView
@@ -92,7 +114,8 @@
                 android:layout_marginBottom="4dp"
                 android:textSize="22sp"
                 android:textColor="#2D9CDB"
-                android:text="COM DESCONTO: R$ 27,00"
+                android:text="@string/discount_price"
+                fontPath="fonts/Roboto-Regular.ttf"
                 />
         </LinearLayout>
 

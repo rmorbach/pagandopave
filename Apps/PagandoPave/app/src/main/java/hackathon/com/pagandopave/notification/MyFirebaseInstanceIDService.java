@@ -37,11 +37,14 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
 
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MyFirebaseInstanceIDService.this);
                 String deviceId = preferences.getString("deviceId", null);
+                String idCartao = preferences.getString("idCartao", null);
 
                 if(deviceId == null) {
                     deviceId = UUID.randomUUID().toString();
+                    idCartao = "3713100019087";
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("deviceId", deviceId);
+                    editor.putString("idCartao", idCartao);
                     editor.apply();
                 }
 
@@ -49,6 +52,7 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
                 try {
                     jsonObject.put("deviceId", deviceId);
                     jsonObject.put("token", token);
+                    jsonObject.put("idCartao", idCartao);
 
                     String response = NetworkUtils.doPost(NetworkUtils.getRegisterTokenURL(), jsonObject.toString());
                     Log.d(TAG, "Register response = "+response);
