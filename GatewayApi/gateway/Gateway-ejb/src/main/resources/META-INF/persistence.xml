@@ -6,6 +6,8 @@
 		<jta-data-source>java:jboss/datasources/pagandopave</jta-data-source>
 
 		<class>br.com.pagandopave.entidade.Usuario</class>
+		<class>br.com.pagandopave.entidade.Campanha</class>
+		<class>br.com.pagandopave.entidade.Parceiro</class>
 
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="update" />

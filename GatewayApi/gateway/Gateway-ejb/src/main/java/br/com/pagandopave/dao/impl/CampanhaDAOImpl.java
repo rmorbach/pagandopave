@@ -20,7 +20,7 @@ public class CampanhaDAOImpl implements CampanhaDAO{
 	@Override
 	public List<Campanha> listar() {
 		try {
-			String qlString = "SELECT c FROM Campanha";
+			String qlString = "SELECT c FROM Campanha c";
 			Query query = em.createQuery(qlString);	
 			return (List<Campanha>) query.getResultList();
 			
