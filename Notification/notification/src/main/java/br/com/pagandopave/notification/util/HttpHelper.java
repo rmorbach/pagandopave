@@ -62,11 +62,7 @@ public static HttpResponse sendPost(URL url, String urlParameters, String accept
 		// If response code is not 200 (success), return null
 		if(responseCode != 200){
 			return httpResponse;
-		}
-
-		
-		
-		
+		}	
 
 		BufferedReader in = new BufferedReader(
 				new InputStreamReader(connection.getInputStream(), Charset.forName("UTF-8")));

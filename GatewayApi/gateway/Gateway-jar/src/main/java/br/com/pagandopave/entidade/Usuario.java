@@ -5,6 +5,9 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,7 +29,8 @@ public class Usuario implements Serializable {
 	private String pushToken;
 	private String deviceId;
 	private int pontos;
-	private String idCartao;
+	private String idCartao;	
+	private Long idPai;
 
 	public Usuario() {
 
@@ -102,6 +106,20 @@ public class Usuario implements Serializable {
 
 	public void setIdCartao(String idCartao) {
 		this.idCartao = idCartao;
+	}
+
+	
+
+	public Long getIdPai() {
+		return idPai;
+	}
+
+	public void setIdPai(Long idPai) {
+		this.idPai = idPai;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override

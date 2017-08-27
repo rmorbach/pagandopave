@@ -1,5 +1,7 @@
 package br.com.pagandopave.impl;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
@@ -33,6 +35,17 @@ public class UsuarioManagerBean implements UsuarioManager{
 	public Usuario consultarPorDeviceId(String deviceId) {
 		Usuario usuario = dao.consultarPorDeviceId(deviceId);
 		return usuario;
+	}
+
+	@Override
+	public Usuario consultarPorIdCartao(String idCartao) {
+		Usuario usuario = dao.consultarPorIdCartao(idCartao);
+		return usuario;
+	}
+
+	@Override
+	public List<Usuario> consultar() {
+		return dao.consultarUsuarios();
 	}
 	
 	

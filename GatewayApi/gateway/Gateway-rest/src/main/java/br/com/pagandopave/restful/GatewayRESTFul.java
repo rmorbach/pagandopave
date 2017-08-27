@@ -37,9 +37,17 @@ public class GatewayRESTFul {
 	@POST
 	@Path("/saldo")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response consultarSaldo(String idCartao) throws IOException {
+	public Response consultarSaldo(String input) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
-		return Response.status(200).entity(agillitasManager.consultarSaldo(idCartao)).build();		
+		return Response.status(200).entity(mainManager.consultarSaldo(input)).build();		
+	}
+	
+	@POST
+	@Path("/extrato")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response consultarExtrato(String input) throws IOException {
+		ObjectMapper mapper = new ObjectMapper();
+		return Response.status(200).entity(mainManager.consultarExtrato(input)).build();		
 	}
 	
 	@POST
@@ -47,17 +55,8 @@ public class GatewayRESTFul {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response notifyAll(String input) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
-		return Response.status(200).entity(notificationManager.notifyAll(input)).build();		
+		return Response.status(200).entity(mainManager.notifyAll(input)).build();		
 	}	
-	
-	
-	@POST
-	@Path("/notifyTeen")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response notifyTeen(String input) throws IOException {
-		ObjectMapper mapper = new ObjectMapper();
-		return Response.status(200).entity(notificationManager.notifyTeen(input)).build();		
-	}
 	
 	@POST
 	@Path("/register")
@@ -68,6 +67,17 @@ public class GatewayRESTFul {
 		
 		ObjectMapper mapper = new ObjectMapper();
 		return Response.status(200).entity(mainManager.registerToken(input)).build();		
+	}
+	
+	@POST
+	@Path("/registerPai")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response registerTokenPai(String input) throws IOException {
+		
+		System.out.println("[registerTokenPai]");
+		
+		ObjectMapper mapper = new ObjectMapper();
+		return Response.status(200).entity(mainManager.registerTokenPai(input)).build();		
 	}
 	
 	@POST

@@ -1,5 +1,7 @@
 package br.com.pagandopave.dao;
 
+import java.util.List;
+
 import javax.ejb.Local;
 
 import br.com.pagandopave.entidade.Usuario;
@@ -37,5 +39,15 @@ public interface UsuarioDAO{
 	 * @return the usuario
 	 */
 	Usuario consultarPorDeviceId(String nickName);
+	
+	/**
+	 * Consultar por idCartao.
+	 *
+	 * @param idCartao
+	 * @return the usuario
+	 */
+	Usuario consultarPorIdCartao(String idCartao);
+	
+	List<Usuario> consultarUsuarios();
 
 }

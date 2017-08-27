@@ -8,6 +8,7 @@
 		<class>br.com.pagandopave.entidade.Usuario</class>
 		<class>br.com.pagandopave.entidade.Campanha</class>
 		<class>br.com.pagandopave.entidade.Parceiro</class>
+		<class>br.com.pagandopave.entidade.Pai</class>
 
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="update" />

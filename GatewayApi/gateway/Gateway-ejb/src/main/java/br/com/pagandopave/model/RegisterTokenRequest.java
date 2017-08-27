@@ -4,6 +4,7 @@ public class RegisterTokenRequest {
 
 	String deviceId;
 	String token;
+	String idCartao;
 	
 	public String getDeviceId() {
 		return deviceId;
@@ -17,6 +18,11 @@ public class RegisterTokenRequest {
 	public void setToken(String token) {
 		this.token = token;
 	}
-	
+	public String getIdCartao() {
+		return idCartao;
+	}
+	public void setIdCartao(String idCartao) {
+		this.idCartao = idCartao;
+	}
 	
 }

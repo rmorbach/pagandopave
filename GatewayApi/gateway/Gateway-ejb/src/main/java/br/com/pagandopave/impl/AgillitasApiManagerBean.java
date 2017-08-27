@@ -3,6 +3,7 @@ package br.com.pagandopave.impl;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.ejb.Stateless;
@@ -17,10 +18,10 @@ import br.com.pagandopave.model.AtivarCartaoRequest;
 import br.com.pagandopave.model.ConsultarExtratoRequest;
 import br.com.pagandopave.model.ConsultarPortadorRequest;
 import br.com.pagandopave.model.ConsultarPortadorResponse;
+import br.com.pagandopave.model.ConsultarSaldoRequest;
 import br.com.pagandopave.model.InserirCreditoRequest;
 import io.swagger.client.ApiException;
 import io.swagger.client.api.CartoesApi;
-import io.swagger.client.model.DetalhamentoExtrato;
 import io.swagger.client.model.ExtratoResponse;
 import io.swagger.client.model.NovoCartao;
 import io.swagger.client.model.NovoCartaoPortador;
@@ -37,17 +38,20 @@ public class AgillitasApiManagerBean implements AgillitasApiManager {
 	private DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
 
 	@Override
-	public String consultarSaldo(String idCartao) {
+	public String consultarSaldo(String input) {
 
+		Gson gson = new Gson();
+		
 		CartoesApi apiInstance = new CartoesApi();
 
+		ConsultarSaldoRequest req = gson.fromJson(input, ConsultarSaldoRequest.class);
+		
 		try {
 
-			Saldo saldo = apiInstance.getSaldo(Constants.CLIENT_ID, Constants.ACCESS_TOKEN, idCartao);   
+			Saldo saldo = apiInstance.getSaldo(Constants.CLIENT_ID, Constants.ACCESS_TOKEN, req.getIdCartao());   
 
 			System.out.println(saldo);
 			return saldo.getSaldo().getValor().toString();
-
 
 		} catch (ApiException e) {
 			System.err.println(e.getMessage());
@@ -67,27 +71,16 @@ public class AgillitasApiManagerBean implements AgillitasApiManager {
 
 		String response = null;
 
-		try {
+		try {		
 
-			Date ini = df.parse(req.getDataInicial());
-			Date end = df.parse(req.getDataFinal());
-
-			LocalDate dataInicial  = new LocalDate(ini.getTime());
-			LocalDate dataFinal  = new LocalDate(end.getTime());	
-
-			ExtratoResponse extrato;
-
-			extrato = apiInstance.getExtrato(Constants.CLIENT_ID, Constants.ACCESS_TOKEN, req.getIdCartao(), dataInicial, dataFinal);
+			ExtratoResponse extrato = apiInstance.getExtrato(Constants.CLIENT_ID, Constants.ACCESS_TOKEN, req.getIdCartao(), new LocalDate("2017-08-25"), new LocalDate("2017-08-27"));
 			
 			response = gson.toJson(extrato);
 
 		} catch (ApiException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
+		}
 
 		return response;
 	}
@@ -160,10 +153,8 @@ public class AgillitasApiManagerBean implements AgillitasApiManager {
 		CartoesApi apiInstance = new CartoesApi();		
 
 		try {
-			Saldo saldo = apiInstance.getSaldo(Constants.CLIENT_ID, Constants.ACCESS_TOKEN, req.getIdCartao());
-
 			SetSaldo setSaldo = new SetSaldo();
-			setSaldo.setSaldo(new Double(saldo.getSaldo().getValor() + Double.parseDouble(req.getCredito())));
+			setSaldo.setSaldo(Double.parseDouble(req.getCredito()));
 
 			apiInstance.atualizarSaldo(Constants.CLIENT_ID, Constants.ACCESS_TOKEN, req.getIdCartao(), setSaldo);
 

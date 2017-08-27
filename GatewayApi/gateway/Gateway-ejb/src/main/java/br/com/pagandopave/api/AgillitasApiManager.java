@@ -4,10 +4,10 @@ import javax.ejb.Local;
 
 @Local
 public interface AgillitasApiManager {
-
-	public String consultarSaldo(String idCartao);
 	
-	public String consultarExtrato(String idCartao);
+	public String consultarSaldo(String input);
+	
+	public String consultarExtrato(String input);
 	
 	public boolean ativarCartao(String input);
 	

@@ -1,5 +1,7 @@
 package br.com.pagandopave.dao.impl;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -50,6 +52,34 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 			return null;
 		}
 		
+	}
+	
+	@Override
+	public Usuario consultarPorIdCartao(String idCartao) {
+		
+		try {
+			String qlString = "SELECT u FROM Usuario u WHERE u.idCartao = :idCartao";
+			Query query = em.createQuery(qlString);		
+			query.setParameter("idCartao", idCartao);
+			return (Usuario) query.getSingleResult();
+			
+		} catch (NoResultException e) {
+			return null;
+		}
+		
+	}
+
+	@Override
+	public List<Usuario> consultarUsuarios() {
+		
+		try {
+			String qlString = "SELECT u FROM Usuario u";
+			Query query = em.createQuery(qlString);	
+			return (List<Usuario>) query.getResultList();
+			
+		} catch (NoResultException e) {
+			return null;
+		}
 	}
 
 }
