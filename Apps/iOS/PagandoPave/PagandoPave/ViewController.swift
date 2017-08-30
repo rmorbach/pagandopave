@@ -78,6 +78,8 @@ class ViewController: UIViewController {
                 
                 self?.insertCredit()
                 
+                self?.showAlert(title: nil, message: "Recarga realizada");
+                
             case .userCancelled:
                 print("Payment cancelled by the user")
             case .internalError:
@@ -110,6 +112,21 @@ class ViewController: UIViewController {
             self.currentIdCartao = idCartao
         }
     }
+    
+    func showAlert(title: String?, message: String)
+    {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: "OK", style: .default) {action in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alertController.addAction(alertAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
